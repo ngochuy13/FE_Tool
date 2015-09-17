@@ -1,0 +1,6 @@
+mixin input(type, name, value)
+  - if(typeof(value) ==='undefined'){
+      input(type="#{type}", name="#{name}")&attributes(attributes)
+  - }else{
+      input(type="#{type}", name="#{name}", value ="#{value}")&attributes(attributes)
+  -}

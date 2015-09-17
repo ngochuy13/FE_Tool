@@ -1,0 +1,14 @@
+mixin thumbs-profile(img, title, listItem)
+  .thumbs-profile&attributes(attributes)
+    article.thumbs-1
+      figure
+        img(src="images/#{img}", alt="#{title}").img-responsive
+      .info
+        h2.title-1!=title
+        ul
+          each item in listItem
+            li
+              span!=item.text
+        if block
+          block
+      .clearfix

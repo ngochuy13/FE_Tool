@@ -1,0 +1,4 @@
+mixin btn(title, href, classIcon)
+  - if (typeof(href) === 'underfined') href= '#'
+  - if (typeof(classIcon) === 'underfined') classIcon = ''
+  a(href="#{href}", title="#{title}", class="#{classIcon} btn")&attributes(attributes)!=title

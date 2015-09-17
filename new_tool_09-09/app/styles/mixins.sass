@@ -1,0 +1,37 @@
+// font size px to em
+
+//font default
+$font-default: 14
+@function em($pixels, $context: $font-default)
+  @return #{$pixels / $context}em
+
+//line-height
+
+// font-size defaut
+$font-size: 14
+=line-height($heightValue, $font-size)
+  line-height: ($heightValue / $font-size)
+
+=appearance($value)
+  -webkit-appearance: $value
+  -moz-appearance: $value
+  -ms-appearance: $value
+  appearance: $value
+
+// border radius
+=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  border-radius: $radius
+
+// box-shadow
+=box-shadow($shadow)
+  -webkit-box-shadow: $shadow
+  box-shadow: $shadow
+
+// border bottom
+// $border-width-default: 3px
+// $color-default: $color-border
+// =border-bottom($border-width: $border-width-default, $color-border: $color-default)
+//   border-bottom: $border-width solid $color-border
+

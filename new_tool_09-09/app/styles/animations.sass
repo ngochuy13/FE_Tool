@@ -1,0 +1,3700 @@
+//  Animations v2.1, Copyright 2014, Joe Mottershaw, https://github.com/joemottershaw/
+///*  ================================================================================== */
+
+//  Table of Contents
+///*  ================================================== */
+//      #Global
+//      #Fade In
+//      #Fade In Up
+//      #Fade In Down
+//      #Fade In Left
+//      #Fade In Right
+//      #Fade In Up Left
+//      #Fade In Up Right
+//      #Fade In Down Left
+//      #Fade In Down Right
+//      #Fade Out
+//      #Fade Out Up
+//      #Fade Out Down
+//      #Fade Out Left
+//      #Fade Out Right
+//      #Fade Out Up Left
+//      #Fade Out Up Right
+//      #Fade Out Down Left
+//      #Fade Out Down Right
+//      #Bounce In 
+//      #Bounce In Up
+//      #Bounce In Down
+//      #Bounce In Left
+//      #Bounce In Right
+//      #Bounce In Up Left
+//      #Bounce In Up Right
+//      #Bounce In Down Left
+//      #Bounce In Down Right
+//      #Bounce Out 
+//      #Bounce Out Up
+//      #Bounce Out Down
+//      #Bounce Out Left
+//      #Bounce Out Right
+//      #Bounce Out Up Left
+//      #Bounce Out Up Right
+//      #Bounce Out Down Left
+//      #Bounce Out Down Right
+//      #Zoom In
+//      #Zoom In Up
+//      #Zoom In Down
+//      #Zoom In Left
+//      #Zoom In Right
+//      #Zoom In Up Left
+//      #Zoom In Up Right
+//      #Zoom In Down Left
+//      #Zoom In Down Right
+//      #Zoom Out
+//      #Zoom Out Up
+//      #Zoom Out Down
+//      #Zoom Out Left
+//      #Zoom Out Right
+//      #Zoom Out Up Left
+//      #Zoom Out Up Right
+//      #Zoom Out Down Left
+//      #Zoom Out Down Right
+//      #Flip In X
+//      #Flip In Y
+//      #Flip In Top Front
+//      #Flip In Top Back
+//      #Flip In Bottom Front
+//      #Flip In Bottom Back
+//      #Flip In Left Front
+//      #Flip In Left Back
+//      #Flip In Right Front
+//      #Flip In Right Back
+//      #Flip Out X
+//      #Flip Out Y
+//      #Flip Out Top Front
+//      #Flip Out Top Front
+//      #Flip Out Bottom Front
+//      #Flip Out Bottom Back
+//      #Flip Out Left Front
+//      #Flip Out Left Back
+//      #Flip Out Right Front
+//      #Flip Out Right Back
+//      #Flash
+//      #Strobe
+//      #Shake X
+//      #Shake Y
+//      #Bounce
+//      #Tada
+//      #Rubber Band
+//      #Swing
+//      #Spin
+//      #Spin Reverse
+//      #Slingshot
+//      #Slingshot Reverse
+//      #Wobble
+//      #Pulse
+//      #Pulsate
+//      #Heartbeat
+//      #Panic
+//
+//
+///*  #Global */
+//    ================================================== */
+
+.animate-in, .animating, .hover-flash, .hover-strobe, .hover-shake-x, .hover-shake-y, .hover-bounce, .hover-tada, .hover-rubber-band, .hover-swing, .hover-spin, .hover-spin-reverse, .hover-slingshot, .hover-slingshot-reverse, .hover-wobble, .hover-pulse, .hover-pulsate, .hover-heartbeat, .hover-panic
+  +transition(none !important)
+
+.animate-in, .animate-out
+  visibility: hidden !important
+  opacity: 0
+
+.animating, .hover-flash, .hover-strobe, .hover-shake-x, .hover-shake-y, .hover-bounce, .hover-tada, .hover-rubber-band, .hover-swing, .hover-spin, .hover-spin-reverse, .hover-slingshot, .hover-slingshot-reverse, .hover-wobble, .hover-pulse, .hover-pulsate, .hover-heartbeat, .hover-panic
+  +animation(1s ease-in-out both)
+
+.animating.slow-mo, .hover-flash.slow-mo, .hover-strobe.slow-mo, .hover-shake-x.slow-mo, .hover-shake-y.slow-mo, .hover-bounce.slow-mo, .hover-tada.slow-mo, .hover-rubber-band.slow-mo, .hover-swing.slow-mo, .hover-spin.slow-mo, .hover-spin-reverse.slow-mo, .hover-slingshot.slow-mo, .hover-slingshot-reverse.slow-mo, .hover-wobble.slow-mo, .hover-pulse.slow-mo, .hover-pulsate.slow-mo, .hover-heartbeat.slow-mo, .hover-panic.slow-mo
+  +animation-duration(2s)
+
+.animating.super-slow-mo, .hover-flash.super-slow-mo, .hover-strobe.super-slow-mo, .hover-shake-x.super-slow-mo, .hover-shake-y.super-slow-mo, .hover-bounce.super-slow-mo, .hover-tada.super-slow-mo, .hover-rubber-band.super-slow-mo, .hover-swing.super-slow-mo, .hover-spin.super-slow-mo, .hover-spin-reverse.super-slow-mo, .hover-slingshot.super-slow-mo, .hover-slingshot-reverse.super-slow-mo, .hover-wobble.super-slow-mo, .hover-pulse.super-slow-mo, .hover-pulsate.super-slow-mo, .hover-heartbeat.super-slow-mo, .hover-panic.super-slow-mo
+  +animation-duration(3s)
+
+.animating.ultra-slow-mo, .hover-flash.ultra-slow-mo, .hover-strobe.ultra-slow-mo, .hover-shake-x.ultra-slow-mo, .hover-shake-y.ultra-slow-mo, .hover-bounce.ultra-slow-mo, .hover-tada.ultra-slow-mo, .hover-rubber-band.ultra-slow-mo, .hover-swing.ultra-slow-mo, .hover-spin.ultra-slow-mo, .hover-spin-reverse.ultra-slow-mo, .hover-slingshot.ultra-slow-mo, .hover-slingshot-reverse.ultra-slow-mo, .hover-wobble.ultra-slow-mo, .hover-pulse.ultra-slow-mo, .hover-pulsate.ultra-slow-mo, .hover-heartbeat.ultra-slow-mo, .hover-panic.ultra-slow-mo
+  +animation-duration(4s)
+
+.animating.hyper-slow-mo, .hover-flash.hyper-slow-mo, .hover-strobe.hyper-slow-mo, .hover-shake-x.hyper-slow-mo, .hover-shake-y.hyper-slow-mo, .hover-bounce.hyper-slow-mo, .hover-tada.hyper-slow-mo, .hover-rubber-band.hyper-slow-mo, .hover-swing.hyper-slow-mo, .hover-spin.hyper-slow-mo, .hover-spin-reverse.hyper-slow-mo, .hover-slingshot.hyper-slow-mo, .hover-slingshot-reverse.hyper-slow-mo, .hover-wobble.hyper-slow-mo, .hover-pulse.hyper-slow-mo, .hover-pulsate.hyper-slow-mo, .hover-heartbeat.hyper-slow-mo, .hover-panic.hyper-slow-mo
+  +animation-duration(5s)
+
+.animating.infinite, .hover-flash.infinite, .hover-strobe.infinite, .hover-shake-x.infinite, .hover-shake-y.infinite, .hover-bounce.infinite, .hover-tada.infinite, .hover-rubber-band.infinite, .hover-swing.infinite, .hover-spin.infinite, .hover-spin-reverse.infinite, .hover-slingshot.infinite, .hover-slingshot-reverse.infinite, .hover-wobble.infinite, .hover-pulse.infinite, .hover-pulsate.infinite, .hover-heartbeat.infinite, .hover-panic.infinite
+  +animation-iteration-count(infinite)
+
+.no-js .animate-in, .ie .animate-in
+  visibility: visible !important
+  opacity: 1
+
+//  #Fade In
+///*  ================================================== */
+
+@-webkit-keyframes fadeIn
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+
+@keyframes fadeIn
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+
+.animating
+  &.fade-in
+    +animation-name(fadeIn)
+  &.fade-in-up
+    +animation-name(fadeInUp)
+  &.fade-in-up-big
+    +animation-name(fadeInUpBig)
+  &.fade-in-up-large
+    +animation-name(fadeInUpLarge)
+  &.fade-in-down
+    +animation-name(fadeInDown)
+  &.fade-in-down-big
+    +animation-name(fadeInDownBig)
+  &.fade-in-down-large
+    +animation-name(fadeInDownLarge)
+  &.fade-in-left
+    +animation-name(fadeInLeft)
+  &.fade-in-left-big
+    +animation-name(fadeInLeftBig)
+  &.fade-in-left-large
+    +animation-name(fadeInLeftLarge)
+  &.fade-in-right
+    +animation-name(fadeInRight)
+  &.fade-in-right-big
+    +animation-name(fadeInRightBig)
+  &.fade-in-right-large
+    +animation-name(fadeInRightLarge)
+  &.fade-in-up-left
+    +animation-name(fadeInUpLeft)
+  &.fade-in-up-left-big
+    +animation-name(fadeInUpLeftBig)
+  &.fade-in-up-left-large
+    +animation-name(fadeInUpLeftLarge)
+  &.fade-in-up-right
+    +animation-name(fadeInUpRight)
+  &.fade-in-up-right-big
+    +animation-name(fadeInUpRightBig)
+  &.fade-in-up-right-large
+    +animation-name(fadeInUpRightLarge)
+  &.fade-in-down-left
+    +animation-name(fadeInDownLeft)
+  &.fade-in-down-left-big
+    +animation-name(fadeInDownLeftBig)
+  &.fade-in-down-left-large
+    +animation-name(fadeInDownLeftLarge)
+  &.fade-in-down-right
+    +animation-name(fadeInDownRight)
+  &.fade-in-down-right-big
+    +animation-name(fadeInDownRightBig)
+  &.fade-in-down-right-large
+    +animation-name(fadeInDownRightLarge)
+  &.fade-out
+    +animation-name(fadeOut)
+  &.fade-out-up
+    +animation-name(fadeOutUp)
+  &.fade-out-up-big
+    +animation-name(fadeOutUpBig)
+  &.fade-out-up-large
+    +animation-name(fadeOutUpLarge)
+  &.fade-out-down
+    +animation-name(fadeOutDown)
+  &.fade-out-down-big
+    +animation-name(fadeOutDownBig)
+  &.fade-out-down-large
+    +animation-name(fadeOutDownLarge)
+  &.fade-out-left
+    +animation-name(fadeOutLeft)
+  &.fade-out-left-big
+    +animation-name(fadeOutLeftBig)
+  &.fade-out-left-large
+    +animation-name(fadeOutLeftLarge)
+  &.fade-out-right
+    +animation-name(fadeOutRight)
+  &.fade-out-right-big
+    +animation-name(fadeOutRightBig)
+  &.fade-out-right-large
+    +animation-name(fadeOutRightLarge)
+  &.fade-out-up-left
+    +animation-name(fadeOutUpLeft)
+  &.fade-out-up-left-big
+    +animation-name(fadeOutUpLeftBig)
+  &.fade-out-up-left-large
+    +animation-name(fadeOutUpLeftLarge)
+  &.fade-out-up-right
+    +animation-name(fadeOutUpRight)
+  &.fade-out-up-right-big
+    +animation-name(fadeOutUpRightBig)
+  &.fade-out-up-right-large
+    +animation-name(fadeOutUpRightLarge)
+  &.fade-out-down-left
+    +animation-name(fadeOutDownLeft)
+  &.fade-out-down-left-big
+    +animation-name(fadeOutDownLeftBig)
+  &.fade-out-down-left-large
+    +animation-name(fadeOutDownLeftLarge)
+  &.fade-out-down-right
+    +animation-name(fadeOutDownRight)
+  &.fade-out-down-right-big
+    +animation-name(fadeOutDownRightBig)
+  &.fade-out-down-right-large
+    +animation-name(fadeOutDownRightLarge)
+  &.bounce-in
+    +animation-name(bounceIn)
+  &.bounce-in-big
+    +animation-name(bounceInBig)
+  &.bounce-in-large
+    +animation-name(bounceInLarge)
+  &.bounce-in-up
+    +animation-name(bounceInUp)
+  &.bounce-in-up-big
+    +animation-name(bounceInUpBig)
+  &.bounce-in-up-large
+    +animation-name(bounceInUpLarge)
+  &.bounce-in-down
+    +animation-name(bounceInDown)
+  &.bounce-in-down-big
+    +animation-name(bounceInDownBig)
+  &.bounce-in-down-large
+    +animation-name(bounceInDownLarge)
+  &.bounce-in-left
+    +animation-name(bounceInLeft)
+  &.bounce-in-left-big
+    +animation-name(bounceInLeftBig)
+  &.bounce-in-left-large
+    +animation-name(bounceInLeftLarge)
+  &.bounce-in-right
+    +animation-name(bounceInRight)
+  &.bounce-in-right-big
+    +animation-name(bounceInRightBig)
+  &.bounce-in-right-large
+    +animation-name(bounceInRightLarge)
+  &.bounce-in-up-left
+    +animation-name(bounceInUpLeft)
+  &.bounce-in-up-left-big
+    +animation-name(bounceInUpLeftBig)
+  &.bounce-in-up-left-large
+    +animation-name(bounceInUpLeftLarge)
+  &.bounce-in-up-right
+    +animation-name(bounceInUpRight)
+  &.bounce-in-up-right-big
+    +animation-name(bounceInUpRightBig)
+  &.bounce-in-up-right-large
+    +animation-name(bounceInUpRightLarge)
+  &.bounce-in-down-left
+    +animation-name(bounceInDownLeft)
+  &.bounce-in-down-left-big
+    +animation-name(bounceInDownLeftBig)
+  &.bounce-in-down-left-large
+    +animation-name(bounceInDownLeftLarge)
+  &.bounce-in-down-right
+    +animation-name(bounceInDownRight)
+  &.bounce-in-down-right-big
+    +animation-name(bounceInDownRightBig)
+  &.bounce-in-down-right-large
+    +animation-name(bounceInDownRightLarge)
+  &.bounce-out
+    +animation-name(bounceOut)
+  &.bounce-out-big
+    +animation-name(bounceOutBig)
+  &.bounce-out-large
+    +animation-name(bounceOutLarge)
+  &.bounce-out-up
+    +animation-name(bounceOutUp)
+  &.bounce-out-up-big
+    +animation-name(bounceOutUpBig)
+  &.bounce-out-up-large
+    +animation-name(bounceOutUpLarge)
+  &.bounce-out-down
+    +animation-name(bounceOutDown)
+  &.bounce-out-down-big
+    +animation-name(bounceOutDownBig)
+  &.bounce-out-down-large
+    +animation-name(bounceOutDownLarge)
+  &.bounce-out-left
+    +animation-name(bounceOutLeft)
+  &.bounce-out-left-big
+    +animation-name(bounceOutLeftBig)
+  &.bounce-out-left-large
+    +animation-name(bounceOutLeftLarge)
+  &.bounce-out-right
+    +animation-name(bounceOutRight)
+  &.bounce-out-right-big
+    +animation-name(bounceOutRightBig)
+  &.bounce-out-right-large
+    +animation-name(bounceOutRightLarge)
+  &.bounce-out-up-left
+    +animation-name(bounceOutUpLeft)
+  &.bounce-out-up-left-big
+    +animation-name(bounceOutUpLeftBig)
+  &.bounce-out-up-left-large
+    +animation-name(bounceOutUpLeftLarge)
+  &.bounce-out-up-right
+    +animation-name(bounceOutUpRight)
+  &.bounce-out-up-right-big
+    +animation-name(bounceOutUpRightBig)
+  &.bounce-out-up-right-large
+    +animation-name(bounceOutUpRightLarge)
+  &.bounce-out-down-left
+    +animation-name(bounceOutDownLeft)
+  &.bounce-out-down-left-big
+    +animation-name(bounceOutDownLeftBig)
+  &.bounce-out-down-left-large
+    +animation-name(bounceOutDownLeftLarge)
+  &.bounce-out-down-right
+    +animation-name(bounceOutDownRight)
+  &.bounce-out-down-right-big
+    +animation-name(bounceOutDownRightBig)
+  &.bounce-out-down-right-large
+    +animation-name(bounceOutDownRightLarge)
+  &.zoom-in
+    +animation-name(zoomIn)
+  &.zoom-in-up
+    +animation-name(zoomInUp)
+  &.zoom-in-up-big
+    +animation-name(zoomInUpBig)
+  &.zoom-in-up-large
+    +animation-name(zoomInUpLarge)
+  &.zoom-in-down
+    +animation-name(zoomInDown)
+  &.zoom-in-down-big
+    +animation-name(zoomInDownBig)
+  &.zoom-in-down-large
+    +animation-name(zoomInDownLarge)
+  &.zoom-in-left
+    +animation-name(zoomInLeft)
+  &.zoom-in-left-big
+    +animation-name(zoomInLeftBig)
+  &.zoom-in-left-large
+    +animation-name(zoomInLeftLarge)
+  &.zoom-in-right
+    +animation-name(zoomInRight)
+  &.zoom-in-right-big
+    +animation-name(zoomInRightBig)
+  &.zoom-in-right-large
+    +animation-name(zoomInRightLarge)
+  &.zoom-in-up-left
+    +animation-name(zoomInUpLeft)
+  &.zoom-in-up-left-big
+    +animation-name(zoomInUpLeftBig)
+  &.zoom-in-up-left-large
+    +animation-name(zoomInUpLeftLarge)
+  &.zoom-in-up-right
+    +animation-name(zoomInUpRight)
+  &.zoom-in-up-right-big
+    +animation-name(zoomInUpRightBig)
+  &.zoom-in-up-right-large
+    +animation-name(zoomInUpRightLarge)
+  &.zoom-in-down-left
+    +animation-name(zoomInDownLeft)
+  &.zoom-in-down-left-big
+    +animation-name(zoomInDownLeftBig)
+  &.zoom-in-down-left-large
+    +animation-name(zoomInDownLeftLarge)
+  &.zoom-in-down-right
+    +animation-name(zoomInDownRight)
+  &.zoom-in-down-right-big
+    +animation-name(zoomInDownRightBig)
+  &.zoom-in-down-right-large
+    +animation-name(zoomInDownRightLarge)
+  &.zoom-out
+    +animation-name(zoomOut)
+  &.zoom-out-up
+    +animation-name(zoomOutUp)
+  &.zoom-out-up-big
+    +animation-name(zoomOutUpBig)
+  &.zoom-out-up-large
+    +animation-name(zoomOutUpLarge)
+  &.zoom-out-down
+    +animation-name(zoomOutDown)
+  &.zoom-out-down-big
+    +animation-name(zoomOutDownBig)
+  &.zoom-out-down-large
+    +animation-name(zoomOutDownLarge)
+  &.zoom-out-left
+    +animation-name(zoomOutLeft)
+  &.zoom-out-left-big
+    +animation-name(zoomOutLeftBig)
+  &.zoom-out-left-large
+    +animation-name(zoomOutLeftLarge)
+  &.zoom-out-right
+    +animation-name(zoomOutRight)
+  &.zoom-out-right-big
+    +animation-name(zoomOutRightBig)
+  &.zoom-out-right-large
+    +animation-name(zoomOutRightLarge)
+  &.zoom-out-up-left
+    +animation-name(zoomOutUpLeft)
+  &.zoom-out-up-left-big
+    +animation-name(zoomOutUpLeftBig)
+  &.zoom-out-up-left-large
+    +animation-name(zoomOutUpLeftLarge)
+  &.zoom-out-up-right
+    +animation-name(zoomOutUpRight)
+  &.zoom-out-up-right-big
+    +animation-name(zoomOutUpRightBig)
+  &.zoom-out-up-right-large
+    +animation-name(zoomOutUpRightLarge)
+  &.zoom-out-down-left
+    +animation-name(zoomOutDownLeft)
+  &.zoom-out-down-left-big
+    +animation-name(zoomOutDownLeftBig)
+  &.zoom-out-down-left-large
+    +animation-name(zoomOutDownLeftLarge)
+  &.zoom-out-down-right
+    +animation-name(zoomOutDownRight)
+  &.zoom-out-down-right-big
+    +animation-name(zoomOutDownRightBig)
+  &.zoom-out-down-right-large
+    +animation-name(zoomOutDownRightLarge)
+  &.flip-in-x
+    +backface-visibility(visible !important)
+    +animation-name(flipInX)
+  &.flip-in-y
+    +backface-visibility(visible !important)
+    +animation-name(flipInY)
+  &.flip-in-top-front
+    -webkit-transform-origin-x: 50%
+    -webkit-transform-origin-y: 0%
+    transform-origin-x: 50%
+    transform-origin-y: 0%
+    +animation-name(flipInTopFront)
+  &.flip-in-top-back
+    -webkit-transform-origin-x: 50%
+    -webkit-transform-origin-y: 0%
+    transform-origin-x: 50%
+    transform-origin-y: 0%
+    +animation-name(flipInTopBack)
+  &.flip-in-bottom-front
+    -webkit-transform-origin-x: 50%
+    -webkit-transform-origin-y: 100%
+    transform-origin-x: 50%
+    transform-origin-y: 100%
+    +animation-name(flipInBottomFront)
+  &.flip-in-bottom-back
+    -webkit-transform-origin-x: 50%
+    -webkit-transform-origin-y: 100%
+    transform-origin-x: 50%
+    transform-origin-y: 100%
+    +animation-name(flipInBottomBack)
+  &.flip-in-left-front
+    -webkit-transform-origin-x: 0%
+    -webkit-transform-origin-y: 50%
+    transform-origin-x: 0%
+    transform-origin-y: 50%
+    +animation-name(flipInLeftFront)
+  &.flip-in-left-back
+    -webkit-transform-origin-x: 0%
+    -webkit-transform-origin-y: 50%
+    transform-origin-x: 0%
+    transform-origin-y: 50%
+    +animation-name(flipInLeftBack)
+  &.flip-in-right-front
+    -webkit-transform-origin-x: 100%
+    -webkit-transform-origin-y: 50%
+    transform-origin-x: 100%
+    transform-origin-y: 50%
+    +animation-name(flipInRightFront)
+  &.flip-in-right-back
+    -webkit-transform-origin-x: 100%
+    -webkit-transform-origin-y: 50%
+    transform-origin-x: 100%
+    transform-origin-y: 50%
+    +animation-name(flipInRightBack)
+  &.flip-out-x
+    -webkit-backface-visibility: visible !important
+    backface-visibility: visible !important
+    +animation-name(flipOutX)
+  &.flip-out-y
+    -webkit-backface-visibility: visible !important
+    backface-visibility: visible !important
+    +animation-name(flipOutY)
+  &.flip-out-top-front
+    -webkit-transform-origin-x: 50%
+    -webkit-transform-origin-y: 0%
+    transform-origin-x: 50%
+    transform-origin-y: 0%
+    +animation-name(flipOutTopFront)
+  &.flip-out-top-back
+    -webkit-transform-origin-x: 50%
+    -webkit-transform-origin-y: 0%
+    transform-origin-x: 50%
+    transform-origin-y: 0%
+    +animation-name(flipOutTopBack)
+  &.flip-out-bottom-front
+    -webkit-transform-origin-x: 50%
+    -webkit-transform-origin-y: 100%
+    transform-origin-x: 50%
+    transform-origin-y: 100%
+    +animation-name(flipOutBottomFront)
+  &.flip-out-bottom-back
+    -webkit-transform-origin-x: 50%
+    -webkit-transform-origin-y: 100%
+    transform-origin-x: 50%
+    transform-origin-y: 100%
+    +animation-name(flipOutBottomBack)
+  &.flip-out-left-front
+    -webkit-transform-origin-x: 0%
+    -webkit-transform-origin-y: 50%
+    transform-origin-x: 0%
+    transform-origin-y: 50%
+    +animation-name(flipOutLeftFront)
+  &.flip-out-left-back
+    -webkit-transform-origin-x: 0%
+    -webkit-transform-origin-y: 50%
+    transform-origin-x: 0%
+    transform-origin-y: 50%
+    +animation-name(flipOutLeftBack)
+  &.flip-out-right-front
+    -webkit-transform-origin-x: 100%
+    -webkit-transform-origin-y: 50%
+    transform-origin-x: 100%
+    transform-origin-y: 50%
+    +animation-name(flipOutRightFront)
+  &.flip-out-right-back
+    -webkit-transform-origin-x: 100%
+    -webkit-transform-origin-y: 50%
+    transform-origin-x: 100%
+    transform-origin-y: 50%
+    +animation-name(flipOutRightBack)
+  &.flash
+    +animation-name(flash)
+
+//  #Fade In Up
+/*  ================================================== */
+
+/* Default */
+
++keyframes(fadeInUp)
+  0%
+    opacity: 0
+    transform: translateY(60px)
+  80%
+    opacity: 1
+  100%
+    transform: translateY(0)
+
+
+/* Big */
+
++keyframes(fadeInUpBig)
+  0%
+    opacity: 0
+    transform: translateY(200px)
+  80%
+    opacity: 1
+  100%
+    transform: translateY(0)
+
+
+/* Large */
+
+@keyframes fadeInUpLarge
+  0%
+    opacity: 0
+    transform: translateY(600px)
+  80%
+    opacity: 1
+  100%
+    transform: translateY(0)
+
+
+//  #Fade In Down
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeInDown
+  0%
+    opacity: 0
+    transform: translateY(-60px)
+  80%
+    opacity: 1
+  100%
+    transform: translateY(0)
+
+
+/* Big */
+
+@keyframes fadeInDownBig
+  0%
+    opacity: 0
+    transform: translateY(-200px)
+  80%
+    opacity: 1
+  100%
+    transform: translateY(0)
+
+
+/* Large */
+
+@keyframes fadeInDownLarge
+  0%
+    opacity: 0
+    transform: translateY(-600px)
+  80%
+    opacity: 1
+  100%
+    transform: translateY(0)
+
+
+//  #Fade In Left
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeInLeft
+  0%
+    opacity: 0
+    transform: translateX(60px)
+  80%
+    opacity: 1
+  100%
+    transform: translateX(0)
+
+
+/* Big */
+
+@keyframes fadeInLeftBig
+  0%
+    opacity: 0
+    transform: translateX(200px)
+  80%
+    opacity: 1
+  100%
+    transform: translateX(0)
+
+
+/* Large */
+
+@keyframes fadeInLeftLarge
+  0%
+    opacity: 0
+    transform: translateX(600px)
+  80%
+    opacity: 1
+  100%
+    transform: translateX(0)
+
+
+//  #Fade In Right
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeInRight
+  0%
+    opacity: 0
+    transform: translateX(-60px)
+  80%
+    opacity: 1
+  100%
+    transform: translateX(0)
+
+
+/* Big */
+
+@keyframes fadeInRightBig
+  0%
+    opacity: 0
+    transform: translateX(-200px)
+  80%
+    opacity: 1
+  100%
+    transform: translateX(0)
+
+
+/* Large */
+
+@keyframes fadeInRightLarge
+  0%
+    opacity: 0
+    transform: translateX(-600px)
+  80%
+    opacity: 1
+  100%
+    transform: translateX(0)
+
+
+//  #Fade In Up Left
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeInUpLeft
+  0%
+    opacity: 0
+    transform: translate(60px, 60px)
+  80%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+
+
+/* Big */
+
+@keyframes fadeInUpLeftBig
+  0%
+    opacity: 0
+    transform: translate(200px, 200px)
+  80%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+
+
+/* Large */
+
+@keyframes fadeInUpLeftLarge
+  0%
+    opacity: 0
+    transform: translate(600px, 600px)
+  80%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+
+
+//  #Fade In Up Right
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeInUpRight
+  0%
+    opacity: 0
+    transform: translate(-60px, 60px)
+  80%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+
+
+/* Big */
+
+@keyframes fadeInUpRightBig
+  0%
+    opacity: 0
+    transform: translate(-200px, 200px)
+  80%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+
+
+/* Large */
+
+@keyframes fadeInUpRightLarge
+  0%
+    opacity: 0
+    transform: translate(-600px, 600px)
+  80%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+
+
+//  #Fade In Down Left
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeInDownLeft
+  0%
+    opacity: 0
+    transform: translate(60px, -60px)
+  80%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+
+
+/* Big */
+
+@keyframes fadeInDownLeftBig
+  0%
+    opacity: 0
+    transform: translate(200px, -200px)
+  80%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+
+
+/* Large */
+
+@keyframes fadeInDownLeftLarge
+  0%
+    opacity: 0
+    transform: translate(600px, -600px)
+  80%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+
+
+//  #Fade In Down Right
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeInDownRight
+  0%
+    opacity: 0
+    transform: translate(-60px, -60px)
+  80%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+
+
+/* Big */
+
+@keyframes fadeInDownRightBig
+  0%
+    opacity: 0
+    transform: translate(-200px, -200px)
+  80%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+
+
+/* Large */
+
+@keyframes fadeInDownRightLarge
+  0%
+    opacity: 0
+    transform: translate(-600px, -600px)
+  80%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+
+
+//  #Fade Out
+///*  ================================================== */
+
+@keyframes fadeOut
+  0%
+    opacity: 1
+  100%
+    opacity: 0
+
+
+//  #Fade Out Up
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeOutUp
+  0%
+    opacity: 1
+    transform: translateY(0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translateY(-60px)
+
+
+/* Big */
+
+@keyframes fadeOutUpBig
+  0%
+    opacity: 1
+    transform: translateY(0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translateY(-200px)
+
+
+/* Large */
+
+@keyframes fadeOutUpLarge
+  0%
+    opacity: 1
+    transform: translateY(0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translateY(-600px)
+
+
+//  #Fade Out Down
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeOutDown
+  0%
+    opacity: 1
+    transform: translateY(0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translateY(60px)
+
+
+/* Big */
+
+@keyframes fadeOutDownBig
+  0%
+    opacity: 1
+    transform: translateY(0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translateY(200px)
+
+
+/* Large */
+
+@keyframes fadeOutDownLarge
+  0%
+    opacity: 1
+    transform: translateY(0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translateY(600px)
+
+
+//  #Fade Out Left
+
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeInUp
+  0%
+    opacity: 0
+    transform: translateY(60px)
+  80%
+    opacity: 1
+  100%
+    transform: translateY(0)
+
+
+/* Big */
+
+@keyframes fadeInUpBig
+  0%
+    opacity: 0
+    transform: translateY(200px)
+  80%
+    opacity: 1
+  100%
+    transform: translateY(0)
+
+
+/* Large */
+
+@keyframes fadeInUpLarge
+  0%
+    opacity: 0
+    transform: translateY(600px)
+  80%
+    opacity: 1
+  100%
+    transform: translateY(0)
+
+
+//  #Fade In Down
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeInDown
+  0%
+    opacity: 0
+    transform: translateY(-60px)
+  80%
+    opacity: 1
+  100%
+    transform: translateY(0)
+
+
+/* Big */
+
+@keyframes fadeInDownBig
+  0%
+    opacity: 0
+    transform: translateY(-200px)
+  80%
+    opacity: 1
+  100%
+    transform: translateY(0)
+
+
+/* Large */
+
+@keyframes fadeInDownLarge
+  0%
+    opacity: 0
+    transform: translateY(-600px)
+  80%
+    opacity: 1
+  100%
+    transform: translateY(0)
+
+
+//  #Fade In Left
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeInLeft
+  0%
+    opacity: 0
+    transform: translateX(60px)
+  80%
+    opacity: 1
+  100%
+    transform: translateX(0)
+
+
+/* Big */
+
+@keyframes fadeInLeftBig
+  0%
+    opacity: 0
+    transform: translateX(200px)
+  80%
+    opacity: 1
+  100%
+    transform: translateX(0)
+
+
+/* Large */
+
+@keyframes fadeInLeftLarge
+  0%
+    opacity: 0
+    transform: translateX(600px)
+  80%
+    opacity: 1
+  100%
+    transform: translateX(0)
+
+
+//  #Fade In Right
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeInRight
+  0%
+    opacity: 0
+    transform: translateX(-60px)
+  80%
+    opacity: 1
+  100%
+    transform: translateX(0)
+
+
+/* Big */
+
+@keyframes fadeInRightBig
+  0%
+    opacity: 0
+    transform: translateX(-200px)
+  80%
+    opacity: 1
+  100%
+    transform: translateX(0)
+
+
+/* Large */
+
+@keyframes fadeInRightLarge
+  0%
+    opacity: 0
+    transform: translateX(-600px)
+  80%
+    opacity: 1
+  100%
+    transform: translateX(0)
+
+
+//  #Fade In Up Left
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeInUpLeft
+  0%
+    opacity: 0
+    transform: translate(60px, 60px)
+  80%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+
+
+/* Big */
+
+@keyframes fadeInUpLeftBig
+  0%
+    opacity: 0
+    transform: translate(200px, 200px)
+  80%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+
+
+/* Large */
+
+@keyframes fadeInUpLeftLarge
+  0%
+    opacity: 0
+    transform: translate(600px, 600px)
+  80%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+
+
+//  #Fade In Up Right
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeInUpRight
+  0%
+    opacity: 0
+    transform: translate(-60px, 60px)
+  80%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+
+
+/* Big */
+
+@keyframes fadeInUpRightBig
+  0%
+    opacity: 0
+    transform: translate(-200px, 200px)
+  80%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+
+
+/* Large */
+
+@keyframes fadeInUpRightLarge
+  0%
+    opacity: 0
+    transform: translate(-600px, 600px)
+  80%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+
+
+//  #Fade In Down Left
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeInDownLeft
+  0%
+    opacity: 0
+    transform: translate(60px, -60px)
+  80%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+
+
+/* Big */
+
+@keyframes fadeInDownLeftBig
+  0%
+    opacity: 0
+    transform: translate(200px, -200px)
+  80%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+
+
+/* Large */
+
+@keyframes fadeInDownLeftLarge
+  0%
+    opacity: 0
+    transform: translate(600px, -600px)
+  80%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+
+
+//  #Fade In Down Right
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeInDownRight
+  0%
+    opacity: 0
+    transform: translate(-60px, -60px)
+  80%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+
+
+/* Big */
+
+@keyframes fadeInDownRightBig
+  0%
+    opacity: 0
+    transform: translate(-200px, -200px)
+  80%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+
+
+/* Large */
+
+@keyframes fadeInDownRightLarge
+  0%
+    opacity: 0
+    transform: translate(-600px, -600px)
+  80%
+    opacity: 1
+  100%
+    transform: translate(0, 0)
+
+
+//  #Fade Out
+///*  ================================================== */
+
+@keyframes fadeOut
+  0%
+    opacity: 1
+  100%
+    opacity: 0
+
+
+//  #Fade Out Up
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeOutUp
+  0%
+    opacity: 1
+    transform: translateY(0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translateY(-60px)
+
+
+/* Big */
+
+@keyframes fadeOutUpBig
+  0%
+    opacity: 1
+    transform: translateY(0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translateY(-200px)
+
+
+/* Large */
+
+@keyframes fadeOutUpLarge
+  0%
+    opacity: 1
+    transform: translateY(0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translateY(-600px)
+
+
+//  #Fade Out Down
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeOutDown
+  0%
+    opacity: 1
+    transform: translateY(0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translateY(60px)
+
+
+/* Big */
+
+@keyframes fadeOutDownBig
+  0%
+    opacity: 1
+    transform: translateY(0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translateY(200px)
+
+
+/* Large */
+
+@keyframes fadeOutDownLarge
+  0%
+    opacity: 1
+    transform: translateY(0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translateY(600px)
+
+
+//  #Fade Out Left
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeOutLeft
+  0%
+    opacity: 1
+    transform: translateX(0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translateX(-60px)
+
+
+/* Big */
+
+@keyframes fadeOutLeftBig
+  0%
+    opacity: 1
+    transform: translateX(0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translateX(-200px)
+
+
+/* Large */
+
+@keyframes fadeOutLeftLarge
+  0%
+    opacity: 1
+    transform: translateX(0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translateX(-600px)
+
+
+//  #Fade Out Right
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeOutRight
+  0%
+    opacity: 1
+    transform: translateX(0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translateX(60px)
+
+
+/* Big */
+
+@keyframes fadeOutRightBig
+  0%
+    opacity: 1
+    transform: translateX(0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translateX(200px)
+
+
+/* Large */
+
+@keyframes fadeOutRightLarge
+  0%
+    opacity: 1
+    transform: translateX(0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translateX(600px)
+
+
+//  #Fade Out Up Left
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeOutUpLeft
+  0%
+    opacity: 1
+    transform: translate(0, 0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translate(-60px, -60px)
+
+
+/* Big */
+
+@keyframes fadeOutUpLeftBig
+  0%
+    opacity: 1
+    transform: translate(0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translate(-200px, -200px)
+
+
+/* Large */
+
+@keyframes fadeOutUpLeftLarge
+  0%
+    opacity: 1
+    transform: translate(0, 0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translate(-600px, -600px)
+
+
+//  #Fade Out Up Right
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeOutUpRight
+  0%
+    opacity: 1
+    transform: translate(0, 0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translate(60px, -60px)
+
+
+/* Big */
+
+@keyframes fadeOutUpRightBig
+  0%
+    opacity: 1
+    transform: translate(0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translate(200px, -200px)
+
+
+/* Large */
+
+@keyframes fadeOutUpRightLarge
+  0%
+    opacity: 1
+    transform: translate(0, 0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translate(600px, -600px)
+
+
+//  #Fade Out Down Left
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeOutDownLeft
+  0%
+    opacity: 1
+    transform: translate(0, 0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translate(-60px, 60px)
+
+
+/* Big */
+
+@keyframes fadeOutDownLeftBig
+  0%
+    opacity: 1
+    transform: translate(0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translate(-200px, 200px)
+
+
+/* Large */
+
+@keyframes fadeOutDownLeftLarge
+  0%
+    opacity: 1
+    transform: translate(0, 0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translate(-600px, 600px)
+
+
+//  #Fade Out Down Right
+///*  ================================================== */
+
+/* Default */
+
+@keyframes fadeOutDownRight
+  0%
+    opacity: 1
+    transform: translate(0, 0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translate(60px, 60px)
+
+
+/* Big */
+
+@keyframes fadeOutDownRightBig
+  0%
+    opacity: 1
+    transform: translate(0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translate(200px, 200px)
+
+
+/* Large */
+
+@keyframes fadeOutDownRightLarge
+  0%
+    opacity: 1
+    transform: translate(0, 0)
+  80%
+    opacity: 0
+  100%
+    opacity: 0
+    transform: translate(600px, 600px)
+
+
+//  #Bounce In
+///*  ================================================== */
+
+/* Default */
+
+@keyframes bounceIn
+  0%
+    opacity: 0
+    transform: scale(0)
+  50%
+    opacity: 1
+    transform: scale(1.05)
+  70%
+    transform: scale(0.85)
+  100%
+    transform: scale(1)
+
+
+/* Big */
+
+@keyframes bounceInBig
+  0%
+    opacity: 0
+    transform: scale(0)
+  50%
+    opacity: 1
+    transform: scale(1.25)
+  70%
+    transform: scale(0.85)
+  100%
+    transform: scale(1)
+
+
+/* Large */
+
+@keyframes bounceInLarge
+  0%
+    opacity: 0
+    transform: scale(0)
+  50%
+    opacity: 1
+    transform: scale(1.5)
+  70%
+    transform: scale(0.8)
+  100%
+    transform: scale(1)
+
+
+//  #Bounce In Up
+///*  ================================================== */
+
+/* Default */
+
+@keyframes bounceInUp
+  0%
+    opacity: 0
+    transform: translateY(60px)
+  50%
+    opacity: 1
+    transform: translateY(-10px)
+  70%
+    transform: translateY(15px)
+  100%
+    transform: translateY(0)
+
+
+/* Big */
+
+@keyframes bounceInUpBig
+  0%
+    opacity: 0
+    transform: translateY(200px)
+  50%
+    opacity: 1
+    transform: translateY(-20px)
+  70%
+    transform: translateY(15px)
+  100%
+    transform: translateY(0)
+
+
+/* Large */
+
+@keyframes bounceInUpLarge
+  0%
+    opacity: 0
+    transform: translateY(600px)
+  50%
+    opacity: 1
+    transform: translateY(-25px)
+  70%
+    transform: translateY(20px)
+  100%
+    transform: translateY(0)
+
+
+//  #Bounce In Down
+///*  ================================================== */
+
+/* Default */
+
+@keyframes bounceInDown
+  0%
+    opacity: 0
+    transform: translateY(-60px)
+  50%
+    opacity: 1
+    transform: translateY(10px)
+  70%
+    transform: translateY(-10px)
+  100%
+    transform: translateY(0)
+
+
+/* Big */
+
+@keyframes bounceInDownBig
+  0%
+    opacity: 0
+    transform: translateY(-200px)
+  50%
+    opacity: 1
+    transform: translateY(20px)
+  70%
+    transform: translateY(-15px)
+  100%
+    transform: translateY(0)
+
+
+/* Large */
+
+@keyframes bounceInDownLarge
+  0%
+    opacity: 0
+    transform: translateY(-600px)
+  50%
+    opacity: 1
+    transform: translateY(25px)
+  70%
+    transform: translateY(-20px)
+  100%
+    transform: translateY(0)
+
+
+//  #Bounce In Left
+///*  ================================================== */
+
+/* Default */
+
+@keyframes bounceInLeft
+  0%
+    opacity: 0
+    transform: translateX(60px)
+  50%
+    opacity: 1
+    transform: translateX(-10px)
+  70%
+    transform: translateX(5px)
+  100%
+    transform: translateX(0)
+
+
+/* Big */
+
+@keyframes bounceInLeftBig
+  0%
+    opacity: 0
+    transform: translateX(140px)
+  50%
+    opacity: 1
+    transform: translateX(-15px)
+  70%
+    transform: translateX(5px)
+  100%
+    transform: translateX(0)
+
+
+/* Large */
+
+@keyframes bounceInLeftLarge
+  0%
+    opacity: 0
+    transform: translateX(280px)
+  50%
+    opacity: 1
+    transform: translateX(-20px)
+  70%
+    transform: translateX(10px)
+  100%
+    transform: translateX(0)
+
+
+//  #Bounce In Right
+///*  ================================================== */
+
+/* Default */
+
+@keyframes bounceInRight
+  0%
+    opacity: 0
+    transform: translateX(-60px)
+  50%
+    opacity: 1
+    transform: translateX(10px)
+  70%
+    transform: translateX(-5px)
+  100%
+    transform: translateX(0)
+
+
+/* Big */
+
+@keyframes bounceInRightBig
+  0%
+    opacity: 0
+    transform: translateX(-140px)
+  50%
+    opacity: 1
+    transform: translateX(15px)
+  70%
+    transform: translateX(-5px)
+  100%
+    transform: translateX(0)
+
+
+/* Large */
+
+@keyframes bounceInRightLarge
+  0%
+    opacity: 0
+    transform: translateX(-280px)
+  50%
+    opacity: 1
+    transform: translateX(20px)
+  70%
+    transform: translateX(-10px)
+  100%
+    transform: translateX(0)
+
+
+//  #Bounce In Up Left
+///*  ================================================== */
+
+/* Default */
+
+@keyframes bounceInUpLeft
+  0%
+    opacity: 0
+    transform: translate(60px, 60px)
+  50%
+    opacity: 1
+    transform: translate(-10px, -10px)
+  70%
+    transform: translate(15px, 15px)
+  100%
+    transform: translate(0, 0)
+
+
+/* Big */
+
+@keyframes bounceInUpLeftBig
+  0%
+    opacity: 0
+    transform: translate(200px, 200px)
+  50%
+    opacity: 1
+    transform: translate(-20px, -20px)
+  70%
+    transform: translate(15px, 15px)
+  100%
+    transform: translate(0, 0)
+
+
+/* Large */
+
+@keyframes bounceInUpLeftLarge
+  0%
+    opacity: 0
+    transform: translate(600px, 600px)
+  50%
+    opacity: 1
+    transform: translate(-25px, -25px)
+  70%
+    transform: translate(20px, 20px)
+  100%
+    transform: translate(0, 0)
+
+
+//  #Bounce In Up Right
+///*  ================================================== */
+
+/* Default */
+
+@keyframes bounceInUpRight
+  0%
+    opacity: 0
+    transform: translate(-60px, 60px)
+  50%
+    opacity: 1
+    transform: translate(10px, -10px)
+  70%
+    transform: translate(-15px, 15px)
+  100%
+    transform: translate(0, 0)
+
+
+/* Big */
+
+@keyframes bounceInUpRightBig
+  0%
+    opacity: 0
+    transform: translate(-200px, 200px)
+  50%
+    opacity: 1
+    transform: translate(20px, -20px)
+  70%
+    transform: translate(-15px, 15px)
+  100%
+    transform: translate(0, 0)
+
+
+/* Large */
+
+@keyframes bounceInUpRightLarge
+  0%
+    opacity: 0
+    transform: translate(-600px, 600px)
+  50%
+    opacity: 1
+    transform: translate(25px, -25px)
+  70%
+    transform: translate(-20px, 20px)
+  100%
+    transform: translate(0, 0)
+
+
+//  #Bounce In Down Left
+///*  ================================================== */
+
+/* Default */
+
+@keyframes bounceInDownLeft
+  0%
+    opacity: 0
+    transform: translate(60px, -60px)
+  50%
+    opacity: 1
+    transform: translate(-10px, 10px)
+  70%
+    transform: translate(15px, -15px)
+  100%
+    transform: translate(0, 0)
+
+
+/* Big */
+
+@keyframes bounceInDownLeftBig
+  0%
+    opacity: 0
+    transform: translate(200px, -200px)
+  50%
+    opacity: 1
+    transform: translate(-20px, 20px)
+  70%
+    transform: translate(15px, -15px)
+  100%
+    transform: translate(0, 0)
+
+
+/* Large */
+
+@keyframes bounceInDownLeftLarge
+  0%
+    opacity: 0
+    transform: translate(600px, -600px)
+  50%
+    opacity: 1
+    transform: translate(-25px, 25px)
+  70%
+    transform: translate(20px, -20px)
+  100%
+    transform: translate(0, 0)
+
+
+//  #Bounce In Down Right
+///*  ================================================== */
+
+/* Default */
+
+@keyframes bounceInDownRight
+  0%
+    opacity: 0
+    transform: translate(-60px, -60px)
+  50%
+    opacity: 1
+    transform: translate(10px, 10px)
+  70%
+    transform: translate(-15px, -15px)
+  100%
+    transform: translate(0, 0)
+
+
+/* Big */
+
+@keyframes bounceInDownRightBig
+  0%
+    opacity: 0
+    transform: translate(-200px, -200px)
+  50%
+    opacity: 1
+    transform: translate(20px, 20px)
+  70%
+    transform: translate(-15px, -15px)
+  100%
+    transform: translate(0, 0)
+
+
+/* Large */
+
+@keyframes bounceInDownRightLarge
+  0%
+    opacity: 0
+    transform: translate(-600px, -600px)
+  50%
+    opacity: 1
+    transform: translate(25px, 25px)
+  70%
+    transform: translate(-20px, -20px)
+  100%
+    transform: translate(0, 0)
+
+
+//  #Bounce Out
+///*  ================================================== */
+
+/* Default */
+
+@keyframes bounceOut
+  0%
+    opacity: 1
+    transform: scale(1)
+  30%
+    transform: scale(0.85)
+  50%, 100%
+    opacity: 0
+    transform: scale(1.05)
+
+
+/* Big */
+
+@keyframes bounceOutBig
+  0%
+    opacity: 1
+    transform: scale(1)
+  30%
+    transform: scale(0.85)
+  50%, 100%
+    opacity: 0
+    transform: scale(1.25)
+
+
+/* Large */
+
+@keyframes bounceOutLarge
+  0%
+    opacity: 1
+    transform: scale(1)
+  30%
+    transform: scale(0.8)
+  50%, 100%
+    opacity: 0
+    transform: scale(1.5)
+
+
+//  #Bounce Out Up
+///*  ================================================== */
+
+/* Default */
+
+@keyframes bounceOutUp
+  0%
+    opacity: 1
+    transform: translateY(0)
+  15%
+    transform: translateY(-10px)
+  40%
+    transform: translateY(15px)
+  90%, 100%
+    opacity: 0
+    transform: translateY(-60px)
+
+
+/* Big */
+
+@keyframes bounceOutUpBig
+  0%
+    opacity: 1
+    transform: translateY(0)
+  15%
+    transform: translateY(-20px)
+  40%
+    transform: translateY(15px)
+  90%, 100%
+    opacity: 0
+    transform: translateY(-200px)
+
+
+/* Large */
+
+@keyframes bounceOutUpLarge
+  0%
+    opacity: 1
+    transform: translateY(0)
+  15%
+    transform: translateY(-25px)
+  40%
+    transform: translateY(20px)
+  90%, 100%
+    opacity: 0
+    transform: translateY(-600px)
+
+
+//  #Bounce Out Down
+///*  ================================================== */
+
+/* Default */
+
+@keyframes bounceOutDown
+  0%
+    opacity: 1
+    transform: translateY(0)
+  15%
+    transform: translateY(10px)
+  40%
+    transform: translateY(-10px)
+  90%, 100%
+    opacity: 0
+    transform: translateY(60px)
+
+
+/* Big */
+
+@keyframes bounceOutDownBig
+  0%
+    opacity: 1
+    transform: translateY(0)
+  15%
+    transform: translateY(15px)
+  40%
+    transform: translateY(-20px)
+  90%, 100%
+    opacity: 0
+    transform: translateY(200px)
+
+
+/* Large */
+
+@keyframes bounceOutDownLarge
+  0%
+    opacity: 1
+    transform: translateY(0)
+  15%
+    transform: translateY(20px)
+  40%
+    transform: translateY(-25px)
+  90%, 100%
+    opacity: 0
+    transform: translateY(600px)
+
+
+//  #Bounce Out Left
+///*  ================================================== */
+
+/* Default */
+
+@keyframes bounceOutLeft
+  0%
+    opacity: 1
+    transform: translateX(0)
+  15%
+    transform: translateX(-10px)
+  40%
+    transform: translateX(15px)
+  90%, 100%
+    opacity: 0
+    transform: translateX(-60px)
+
+
+/* Big */
+
+@keyframes bounceOutLeftBig
+  0%
+    opacity: 1
+    transform: translateX(0)
+  15%
+    transform: translateX(-20px)
+  40%
+    transform: translateX(15px)
+  90%, 100%
+    opacity: 0
+    transform: translateX(-200px)
+
+
+/* Large */
+
+@keyframes bounceOutLeftLarge
+  0%
+    opacity: 1
+    transform: translateX(0)
+  15%
+    transform: translateX(-25px)
+  40%
+    transform: translateX(20px)
+  90%, 100%
+    opacity: 0
+    transform: translateX(-600px)
+
+
+//  #Bounce Out Right
+///*  ================================================== */
+
+/* Default */
+
+@keyframes bounceOutRight
+  0%
+    opacity: 1
+    transform: translateX(0)
+  15%
+    transform: translateX(10px)
+  40%
+    transform: translateX(-10px)
+  90%, 100%
+    opacity: 0
+    transform: translateX(60px)
+
+
+/* Big */
+
+@keyframes bounceOutRightBig
+  0%
+    opacity: 1
+    transform: translateX(0)
+  15%
+    transform: translateX(15px)
+  40%
+    transform: translateX(-20px)
+  90%, 100%
+    opacity: 0
+    transform: translateX(200px)
+
+
+/* Large */
+
+@keyframes bounceOutRightLarge
+  0%
+    opacity: 1
+    transform: translateX(0)
+  15%
+    transform: translateX(20px)
+  40%
+    transform: translateX(-25px)
+  90%, 100%
+    opacity: 0
+    transform: translateX(600px)
+
+
+//  #Bounce Out Up Left
+///*  ================================================== */
+
+/* Default */
+
+@keyframes bounceOutUpLeft
+  0%
+    opacity: 1
+    transform: translate(0, 0)
+  15%
+    transform: translate(-10px, -10px)
+  40%
+    transform: translate(15px, 15px)
+  90%, 100%
+    opacity: 0
+    transform: translate(-60px, -60px)
+
+
+/* Big */
+
+@keyframes bounceOutUpLeftBig
+  0%
+    opacity: 1
+    transform: translate(0, 0)
+  15%
+    transform: translate(-20px, -20px)
+  40%
+    transform: translate(15px, 15px)
+  90%, 100%
+    opacity: 0
+    transform: translate(-200px, -200px)
+
+
+/* Large */
+
+@keyframes bounceOutUpLeftLarge
+  0%
+    opacity: 1
+    transform: translate(0, 0)
+  15%
+    transform: translate(-25px, -25px)
+  40%
+    transform: translate(20px, 20px)
+  90%, 100%
+    opacity: 0
+    transform: translate(-600px, -600px)
+
+
+//  #Bounce Out Up Right
+///*  ================================================== */
+
+/* Default */
+
+@keyframes bounceOutUpRight
+  0%
+    opacity: 1
+    transform: translate(0, 0)
+  15%
+    transform: translate(10px, -10px)
+  40%
+    transform: translate(-15px, 15px)
+  90%, 100%
+    opacity: 0
+    transform: translate(60px, -60px)
+
+
+/* Big */
+
+@keyframes bounceOutUpRightBig
+  0%
+    opacity: 1
+    transform: translate(0, 0)
+  15%
+    transform: translate(20px, -20px)
+  40%
+    transform: translate(-15px, 15px)
+  90%, 100%
+    opacity: 0
+    transform: translate(200px, -200px)
+
+
+/* Large */
+
+@keyframes bounceOutUpRightLarge
+  0%
+    opacity: 1
+    transform: translate(0, 0)
+  15%
+    transform: translate(25px, -25px)
+  40%
+    transform: translate(-20px, 20px)
+  90%, 100%
+    opacity: 0
+    transform: translate(600px, -600px)
+
+
+//  #Bounce Out Down Left
+///*  ================================================== */
+
+/* Default */
+
+@keyframes bounceOutDownLeft
+  0%
+    opacity: 1
+    transform: translate(0, 0)
+  15%
+    transform: translate(-10px, 10px)
+  40%
+    transform: translate(15px, -15px)
+  90%, 100%
+    opacity: 0
+    transform: translate(-60px, 60px)
+
+
+/* Big */
+
+@keyframes bounceOutDownLeftBig
+  0%
+    opacity: 1
+    transform: translate(0, 0)
+  15%
+    transform: translate(-20px, 20px)
+  40%
+    transform: translate(15px, -15px)
+  90%, 100%
+    opacity: 0
+    transform: translate(-200px, 200px)
+
+
+/* Large */
+
+@keyframes bounceOutDownLeftLarge
+  0%
+    opacity: 1
+    transform: translate(0, 0)
+  15%
+    transform: translate(-25px, 25px)
+  40%
+    transform: translate(20px, -20px)
+  90%, 100%
+    opacity: 0
+    transform: translate(-600px, 600px)
+
+
+//  #Bounce Out Down Right
+///*  ================================================== */
+
+/* Default */
+
+@keyframes bounceOutDownRight
+  0%
+    opacity: 1
+    transform: translate(0, 0)
+  15%
+    transform: translate(10px, 10px)
+  40%
+    transform: translate(-15px, -15px)
+  90%, 100%
+    opacity: 0
+    transform: translate(60px, 60px)
+
+
+/* Big */
+
+@keyframes bounceOutDownRightBig
+  0%
+    opacity: 1
+    transform: translate(0, 0)
+  15%
+    transform: translate(20px, 20px)
+  40%
+    transform: translate(-15px, -15px)
+  90%, 100%
+    opacity: 0
+    transform: translate(200px, 200px)
+
+
+/* Large */
+
+@keyframes bounceOutDownRightLarge
+  0%
+    opacity: 1
+    transform: translate(0, 0)
+  15%
+    transform: translate(25px, 25px)
+  40%
+    transform: translate(-20px, -20px)
+  90%, 100%
+    opacity: 0
+    transform: translate(600px, 600px)
+
+
+//  #Zoom In
+///*  ================================================== */
+
+/* Default */
+
+@keyframes zoomIn
+  0%
+    opacity: 0
+    transform: scale(0)
+  100%
+    opacity: 1
+    transform: scale(1)
+
+
+//  #Zoom In Up
+///*  ================================================== */
+
+/* Default */
+
+@keyframes zoomInUp
+  0%
+    opacity: 0
+    transform: scale(0) translateY(200px)
+  100%
+    opacity: 1
+    transform: scale(1) translateY(0)
+
+
+/* Big */
+
+@keyframes zoomInUpBig
+  0%
+    opacity: 0
+    transform: scale(0) translateY(600px)
+  100%
+    opacity: 1
+    transform: scale(1) translateY(0)
+
+
+/* Large */
+
+@keyframes zoomInUpLarge
+  0%
+    opacity: 0
+    transform: scale(0) translateY(1000px)
+  100%
+    opacity: 1
+    transform: scale(1) translateY(0)
+
+
+//  #Zoom In Down
+///*  ================================================== */
+
+/* Default */
+
+@keyframes zoomInDown
+  0%
+    opacity: 0
+    transform: scale(0) translateY(-200px)
+  100%
+    opacity: 1
+    transform: scale(1) translateY(0)
+
+
+/* Big */
+
+@keyframes zoomInDownBig
+  0%
+    opacity: 0
+    transform: scale(0) translateY(-600px)
+  100%
+    opacity: 1
+    transform: scale(1) translateY(0)
+
+
+/* Large */
+
+@keyframes zoomInDownLarge
+  0%
+    opacity: 0
+    transform: scale(0) translateY(-1000px)
+  100%
+    opacity: 1
+    transform: scale(1) translateY(0)
+
+
+//  #Zoom In Left
+///*  ================================================== */
+
+/* Default */
+
+@keyframes zoomInLeft
+  0%
+    opacity: 0
+    transform: scale(0) translateX(-200px)
+  100%
+    opacity: 1
+    transform: scale(1) translateX(0)
+
+
+/* Big */
+
+@keyframes zoomInLeftBig
+  0%
+    opacity: 0
+    transform: scale(0) translateX(-600px)
+  100%
+    opacity: 1
+    transform: scale(1) translateX(0)
+
+
+/* Large */
+
+@keyframes zoomInLeftLarge
+  0%
+    opacity: 0
+    transform: scale(0) translateX(-1300px)
+  100%
+    opacity: 1
+    transform: scale(1) translateX(0)
+
+
+//  #Zoom In Right
+///*  ================================================== */
+
+/* Default */
+
+@keyframes zoomInRight
+  0%
+    opacity: 0
+    transform: scale(0) translateX(200px)
+  100%
+    opacity: 1
+    transform: scale(1) translateX(0)
+
+
+/* Big */
+
+@keyframes zoomInRightBig
+  0%
+    opacity: 0
+    transform: scale(0) translateX(600px)
+  100%
+    opacity: 1
+    transform: scale(1) translateX(0)
+
+
+/* Large */
+
+@keyframes zoomInRightLarge
+  0%
+    opacity: 0
+    transform: scale(0) translateX(1300px)
+  100%
+    opacity: 1
+    transform: scale(1) translateX(0)
+
+
+//  #Zoom In Up Left
+///*  ================================================== */
+
+/* Default */
+
+@keyframes zoomInUpLeft
+  0%
+    opacity: 0
+    transform: scale(0) translate(200px, 200px)
+  100%
+    opacity: 1
+    transform: scale(1) translate(0, 0)
+
+
+/* Big */
+
+@keyframes zoomInUpLeftBig
+  0%
+    opacity: 0
+    transform: scale(0) translate(600px, 600px)
+  100%
+    opacity: 1
+    transform: scale(1) translate(0, 0)
+
+
+/* Large */
+
+@keyframes zoomInUpLeftLarge
+  0%
+    opacity: 0
+    transform: scale(0) translate(1000px, 1000px)
+  100%
+    opacity: 1
+    transform: scale(1) translate(0, 0)
+
+
+//  #Zoom In Up Right
+///*  ================================================== */
+
+/* Default */
+
+@keyframes zoomInUpRight
+  0%
+    opacity: 0
+    transform: scale(0) translate(-200px, 200px)
+  100%
+    opacity: 1
+    transform: scale(1) translate(0, 0)
+
+
+/* Big */
+
+@keyframes zoomInUpRightBig
+  0%
+    opacity: 0
+    transform: scale(0) translate(-600px, 600px)
+  100%
+    opacity: 1
+    transform: scale(1) translate(0, 0)
+
+
+/* Large */
+
+@keyframes zoomInUpRightLarge
+  0%
+    opacity: 0
+    transform: scale(0) translate(-1000px, 1000px)
+  100%
+    opacity: 1
+    transform: scale(1) translate(0, 0)
+
+
+//  #Zoom In Down Left
+///*  ================================================== */
+
+/* Default */
+
+@keyframes zoomInDownLeft
+  0%
+    opacity: 0
+    transform: scale(0) translate(-200px, -200px)
+  100%
+    opacity: 1
+    transform: scale(1) translate(0, 0)
+
+
+/* Big */
+
+@keyframes zoomInDownLeftBig
+  0%
+    opacity: 0
+    transform: scale(0) translate(-600px, -600px)
+  100%
+    opacity: 1
+    transform: scale(1) translate(0, 0)
+
+
+/* Large */
+
+@keyframes zoomInDownLeftLarge
+  0%
+    opacity: 0
+    transform: scale(0) translate(-1000px, -1000px)
+  100%
+    opacity: 1
+    transform: scale(1) translate(0, 0)
+
+
+//  #Zoom In Down Right
+///*  ================================================== */
+
+/* Default */
+
+@keyframes zoomInDownRight
+  0%
+    opacity: 0
+    transform: scale(0) translate(200px, -200px)
+  100%
+    opacity: 1
+    transform: scale(1) translate(0, 0)
+
+
+/* Big */
+
+@keyframes zoomInDownRightBig
+  0%
+    opacity: 0
+    transform: scale(0) translate(600px, -600px)
+  100%
+    opacity: 1
+    transform: scale(1) translate(0, 0)
+
+
+/* Large */
+
+@keyframes zoomInDownRightLarge
+  0%
+    opacity: 0
+    transform: scale(0) translate(1000px, -1000px)
+  100%
+    opacity: 1
+    transform: scale(1) translate(0, 0)
+
+
+//  #Zoom Out
+///*  ================================================== */
+
+/* Default */
+
+@keyframes zoomOut
+  0%
+    opacity: 1
+    transform: scale(1)
+  100%
+    opacity: 0
+    transform: scale(0)
+
+
+//  #Zoom Out Up
+///*  ================================================== */
+
+/* Default */
+
+@keyframes zoomOutUp
+  0%
+    opacity: 1
+    transform: scale(1) translateY(0)
+  100%
+    opacity: 0
+    transform: scale(0) translateY(-200px)
+
+
+/* Big */
+
+@keyframes zoomOutUpBig
+  0%
+    opacity: 1
+    transform: scale(1) translateY(0)
+  100%
+    opacity: 0
+    transform: scale(0) translateY(-600px)
+
+
+/* Large */
+
+@keyframes zoomOutUpLarge
+  0%
+    opacity: 1
+    transform: scale(1) translateY(0)
+  100%
+    opacity: 0
+    transform: scale(0) translateY(-1000px)
+
+
+//  #Zoom Out Down
+///*  ================================================== */
+
+/* Default */
+
+@keyframes zoomOutDown
+  0%
+    opacity: 1
+    transform: scale(1) translateY(0)
+  100%
+    opacity: 0
+    transform: scale(0) translateY(200px)
+
+
+/* Big */
+
+@keyframes zoomOutDownBig
+  0%
+    opacity: 1
+    transform: scale(1) translateY(0)
+  100%
+    opacity: 0
+    transform: scale(0) translateY(600px)
+
+
+/* Large */
+
+@keyframes zoomOutDownLarge
+  0%
+    opacity: 1
+    transform: scale(1) translateY(0)
+  100%
+    opacity: 0
+    transform: scale(0) translateY(1000px)
+
+
+//  #Zoom Out Left
+///*  ================================================== */
+
+/* Default */
+
+@keyframes zoomOutLeft
+  0%
+    opacity: 1
+    transform: scale(1) translateX(0)
+  100%
+    opacity: 0
+    transform: scale(0) translateX(-200px)
+
+
+/* Big */
+
+@keyframes zoomOutLeftBig
+  0%
+    opacity: 1
+    transform: scale(1) translateX(0)
+  100%
+    opacity: 0
+    transform: scale(0) translateX(-600px)
+
+
+/* Large */
+
+@keyframes zoomOutLeftLarge
+  0%
+    opacity: 1
+    transform: scale(1) translateX(0)
+  100%
+    opacity: 0
+    transform: scale(0) translateX(-1300px)
+
+
+//  #Zoom Out Right
+///*  ================================================== */
+
+/* Default */
+
+@keyframes zoomOutRight
+  0%
+    opacity: 1
+    transform: scale(1) translateX(0)
+  100%
+    opacity: 0
+    transform: scale(0) translateX(200px)
+
+
+/* Big */
+
+@keyframes zoomOutRightBig
+  0%
+    opacity: 1
+    transform: scale(1) translateX(0)
+  100%
+    opacity: 0
+    transform: scale(0) translateX(600px)
+
+
+/* Large */
+
+@keyframes zoomOutRightLarge
+  0%
+    opacity: 1
+    transform: scale(1) translateX(0)
+  100%
+    opacity: 0
+    transform: scale(0) translateX(1300px)
+
+
+//  #Zoom Out Up Left
+///*  ================================================== */
+
+/* Default */
+
+@keyframes zoomOutUpLeft
+  0%
+    opacity: 1
+    transform: scale(1) translate(0, 0)
+  100%
+    opacity: 0
+    transform: scale(0) translate(-200px, -200px)
+
+
+/* Big */
+
+@keyframes zoomOutUpLeftBig
+  0%
+    opacity: 1
+    transform: scale(1) translate(0, 0)
+  100%
+    opacity: 0
+    transform: scale(0) translate(-600px, -600px)
+
+
+/* Large */
+
+@keyframes zoomOutUpLeftLarge
+  0%
+    opacity: 1
+    transform: scale(1) translate(0, 0)
+  100%
+    opacity: 0
+    transform: scale(0) translate(-1000px, -1000px)
+
+
+//  #Zoom Out Up Right
+///*  ================================================== */
+
+/* Default */
+
+@keyframes zoomOutUpRight
+  0%
+    opacity: 1
+    transform: scale(1) translate(0, 0)
+  100%
+    opacity: 0
+    transform: scale(0) translate(200px, -200px)
+
+
+/* Big */
+
+@keyframes zoomOutUpRightBig
+  0%
+    opacity: 1
+    transform: scale(1) translate(0, 0)
+  100%
+    opacity: 0
+    transform: scale(0) translate(600px, -600px)
+
+
+/* Large */
+
+@keyframes zoomOutUpRightLarge
+  0%
+    opacity: 1
+    transform: scale(1) translate(0, 0)
+  100%
+    opacity: 0
+    transform: scale(0) translate(1000px, -1000px)
+
+
+//  #Zoom Out Down Left
+///*  ================================================== */
+
+/* Default */
+
+@keyframes zoomOutDownLeft
+  0%
+    opacity: 1
+    transform: scale(1) translate(0, 0)
+  100%
+    opacity: 0
+    transform: scale(0) translate(-200px, 200px)
+
+
+/* Big */
+
+@keyframes zoomOutDownLeftBig
+  0%
+    opacity: 1
+    transform: scale(1) translate(0, 0)
+  100%
+    opacity: 0
+    transform: scale(0) translate(-600px, 600px)
+
+
+/* Large */
+
+@keyframes zoomOutDownLeftLarge
+  0%
+    opacity: 1
+    transform: scale(1) translate(0, 0)
+  100%
+    opacity: 0
+    transform: scale(0) translate(-1000px, 1000px)
+
+
+//  #Zoom Out Down Right
+///*  ================================================== */
+
+/* Default */
+
+@keyframes zoomOutDownRight
+  0%
+    opacity: 1
+    transform: scale(1) translate(0, 0)
+  100%
+    opacity: 0
+    transform: scale(0) translate(200px, 200px)
+
+
+/* Big */
+
+@keyframes zoomOutDownRightBig
+  0%
+    opacity: 1
+    transform: scale(1) translate(0, 0)
+  100%
+    opacity: 0
+    transform: scale(0) translate(600px, 600px)
+
+
+/* Large */
+
+@keyframes zoomOutDownRightLarge
+  0%
+    opacity: 1
+    transform: scale(1) translate(0, 0)
+  100%
+    opacity: 0
+    transform: scale(0) translate(1000px, 1000px)
+
+
+//  #Flip In X
+///*  ================================================== */
+
+@keyframes flipInX
+  0%
+    opacity: 0
+    transform: perspective(500) rotateX(90deg)
+  50%
+    transform: perspective(500) rotateX(-15deg)
+  70%
+    transform: perspective(500) rotateX(15deg)
+  100%
+    opacity: 1
+    transform: perspective(500) rotateX(0deg)
+
+
+//  #Flip In Y
+///*  ================================================== */
+
+@keyframes flipInY
+  0%
+    transform: perspective(500) rotateY(90deg)
+    opacity: 0
+  50%
+    transform: perspective(500) rotateY(-25deg)
+  70%
+    transform: perspective(500) rotateY(25deg)
+  100%
+    transform: perspective(500) rotateY(0deg)
+    opacity: 1
+
+
+//  #Flip In Top Front
+///*  ================================================== */
+
+@keyframes flipInTopFront
+  0%
+    opacity: 0
+    transform: perspective(1000) rotateX(90deg)
+  50%
+    transform: perspective(1000) rotateX(-15deg)
+  70%
+    transform: perspective(1000) rotateX(15deg)
+  100%
+    opacity: 1
+    transform: perspective(1000) rotateX(0deg)
+
+
+//  #Flip In Top Back
+///*  ================================================== */
+
+@keyframes flipInTopBack
+  0%
+    opacity: 0
+    transform: perspective(1000) rotateX(-90deg)
+  50%
+    transform: perspective(1000) rotateX(20deg)
+  70%
+    transform: perspective(1000) rotateX(-15deg)
+  100%
+    opacity: 1
+    transform: perspective(1000) rotateX(0deg)
+
+
+//  #Flip In Bottom Front
+///*  ================================================== */
+
+@keyframes flipInBottomFront
+  0%
+    opacity: 0
+    transform: perspective(1000) rotateX(-90deg)
+  50%
+    transform: perspective(1000) rotateX(20deg)
+  70%
+    transform: perspective(1000) rotateX(-15deg)
+  100%
+    opacity: 1
+    transform: perspective(1000) rotateX(0deg)
+
+
+//  #Flip In Bottom Back
+///*  ================================================== */
+
+@keyframes flipInBottomBack
+  0%
+    opacity: 0
+    transform: perspective(1000) rotateX(90deg)
+  50%
+    transform: perspective(1000) rotateX(-20deg)
+  70%
+    transform: perspective(1000) rotateX(15deg)
+  100%
+    opacity: 1
+    transform: perspective(1000) rotateX(0deg)
+
+
+//  #Flip In Left Front
+///*  ================================================== */
+
+@keyframes flipInLeftFront
+  0%
+    opacity: 0
+    transform: perspective(1000) rotateY(-90deg)
+  50%
+    transform: perspective(1000) rotateY(20deg)
+  70%
+    transform: perspective(1000) rotateY(-15deg)
+  100%
+    opacity: 1
+    transform: perspective(1000) rotateY(0deg)
+
+
+//  #Flip In Left Back
+///*  ================================================== */
+
+@keyframes flipInLeftBack
+  0%
+    opacity: 0
+    transform: perspective(1000) rotateY(90deg)
+  50%
+    transform: perspective(1000) rotateY(-20deg)
+  70%
+    transform: perspective(1000) rotateY(15deg)
+  100%
+    opacity: 1
+    transform: perspective(1000) rotateY(0deg)
+
+
+//  #Flip In Right Front
+///*  ================================================== */
+
+@keyframes flipInRightFront
+  0%
+    opacity: 0
+    transform: perspective(1000) rotateY(90deg)
+  50%
+    transform: perspective(1000) rotateY(-20deg)
+  70%
+    transform: perspective(1000) rotateY(15deg)
+  100%
+    opacity: 1
+    transform: perspective(1000) rotateY(0deg)
+
+
+//  #Flip In Right Back
+///*  ================================================== */
+
+@keyframes flipInRightBack
+  0%
+    opacity: 0
+    transform: perspective(1000) rotateY(-90deg)
+  50%
+    transform: perspective(1000) rotateY(20deg)
+  70%
+    transform: perspective(1000) rotateY(-15deg)
+  100%
+    opacity: 1
+    transform: perspective(1000) rotateY(0deg)
+
+
+//  #Flip Out X
+///*  ================================================== */
+
+@keyframes flipOutX
+  0%, 5%
+    transform: perspective(500) rotateX(0deg)
+    opacity: 1
+  30%
+    transform: perspective(500) rotateX(-25deg)
+  50%
+    opacity: 1
+  90%, 100%
+    transform: perspective(500) rotateX(90deg)
+    opacity: 0
+
+
+//  #Flip Out Y
+///*  ================================================== */
+
+@keyframes flipOutY
+  0%, 5%
+    transform: perspective(500) rotateY(0deg)
+    opacity: 1
+  30%
+    transform: perspective(500) rotateY(-25deg)
+  50%
+    opacity: 1
+  90%, 100%
+    transform: perspective(500) rotateY(90deg)
+    opacity: 0
+
+
+//  #Flip Out Top
+///*  ================================================== */
+
+/* Front */
+
+@keyframes flipOutTopFront
+  0%
+    opacity: 1
+    transform: perspective(1000) rotateX(0deg)
+  30%
+    transform: perspective(1000) rotateX(-20deg)
+  50%
+    opacity: 1
+  100%
+    opacity: 0
+    transform: perspective(1000) rotateX(90deg)
+
+
+/* Back */
+
+@keyframes flipOutTopBack
+  0%
+    opacity: 1
+    transform: perspective(1000) rotateX(0deg)
+  30%
+    transform: perspective(1000) rotateX(20deg)
+  50%
+    opacity: 1
+  100%
+    opacity: 0
+    transform: perspective(1000) rotateX(-90deg)
+
+
+//  #Flip Out Bottom Front
+///*  ================================================== */
+
+/* Front */
+
+@keyframes flipOutBottomFront
+  0%
+    opacity: 1
+    transform: perspective(1000) rotateX(0deg)
+  30%
+    transform: perspective(1000) rotateX(20deg)
+  50%
+    opacity: 1
+  100%
+    opacity: 0
+    transform: perspective(1000) rotateX(-90deg)
+
+
+/* Back */
+
+@keyframes flipOutBottomBack
+  0%
+    opacity: 1
+    transform: perspective(1000) rotateX(0deg)
+  30%
+    transform: perspective(1000) rotateX(-20deg)
+  50%
+    opacity: 1
+  100%
+    opacity: 0
+    transform: perspective(1000) rotateX(90deg)
+
+
+//  #Flip Out Left Front
+///*  ================================================== */
+
+/* Front */
+
+@keyframes flipOutLeftFront
+  0%
+    opacity: 1
+    transform: perspective(1000) rotateY(0deg)
+  30%
+    transform: perspective(1000) rotateY(20deg)
+  50%
+    opacity: 1
+  100%
+    opacity: 0
+    transform: perspective(1000) rotateY(-90deg)
+
+
+/* Back */
+
+@keyframes flipOutLeftBack
+  0%
+    opacity: 1
+    transform: perspective(1000) rotateY(0deg)
+  30%
+    transform: perspective(1000) rotateY(-20deg)
+  50%
+    opacity: 1
+  100%
+    opacity: 0
+    transform: perspective(1000) rotateY(90deg)
+
+
+//  #Flip Out Right Front
+///*  ================================================== */
+
+/* Front */
+
+@keyframes flipOutRightFront
+  0%
+    opacity: 1
+    transform: perspective(1000) rotateY(0deg)
+  30%
+    transform: perspective(1000) rotateY(-20deg)
+  50%
+    opacity: 1
+  100%
+    opacity: 0
+    transform: perspective(1000) rotateY(90deg)
+
+
+/* Back */
+
+@keyframes flipOutRightBack
+  0%
+    opacity: 1
+    transform: perspective(1000) rotateY(0deg)
+  30%
+    transform: perspective(1000) rotateY(20deg)
+  50%
+    opacity: 1
+  100%
+    opacity: 0
+    transform: perspective(1000) rotateY(-90deg)
+
+
+//  #Flash
+///*  ================================================== */
+
+@keyframes flash
+  0%, 50%, 100%
+    opacity: 1
+  25%, 75%
+    opacity: 0
+
+
+.hover-flash:hover
+  -webkit-animation-name: flash
+  animation-name: flash
+
+//  #Strobe
+///*  ================================================== */
+
+@keyframes strobe
+  0%, 20%, 40%, 60%, 80%, 100%
+    opacity: 1
+  10%, 30%, 50%, 70%, 90%
+    opacity: 0
+
+
+.animating.strobe, .hover-strobe:hover
+  -webkit-animation-name: strobe
+  animation-name: strobe
+
+//  #Shake X
+///*  ================================================== */
+
+@keyframes shakeX
+  0%, 100%
+    transform: translateY(0)
+  10%, 30%, 50%, 70%, 90%
+    transform: translateY(-10px)
+  20%, 40%, 60%, 80%
+    transform: translateY(10px)
+
+
+.animating.shake-x, .hover-shake-x:hover
+  -webkit-animation-name: shakeX
+  animation-name: shakeX
+
+//  #Shake Y
+///*  ================================================== */
+
+@keyframes shakeY
+  0%, 100%
+    transform: translateX(0)
+  10%, 30%, 50%, 70%, 90%
+    transform: translateX(-10px)
+  20%, 40%, 60%, 80%
+    transform: translateX(10px)
+
+
+.animating.shake-y, .hover-shake-y:hover
+  -webkit-animation-name: shakeY
+  animation-name: shakeY
+
+//  #Bounce
+///*  ================================================== */
+
+@keyframes bounce
+  0%, 20%, 50%, 80%, 100%
+    transform: translateY(0)
+  40%
+    transform: translateY(-30px)
+  60%
+    transform: translateY(-15px)
+
+
+.animating.bounce, .hover-bounce:hover
+  -webkit-animation-name: bounce
+  animation-name: bounce
+
+//  #Tada
+///*  ================================================== */
+
+@keyframes tada
+  0%, 100%
+    transform: scale(1) rotate(0)
+  10%, 20%
+    transform: scale(0.9) rotate(-3deg)
+  30%, 50%, 70%, 90%
+    transform: scale(1.1) rotate(3deg)
+  40%, 60%, 80%
+    transform: scale(1.1) rotate(-3deg)
+
+
+.animating.tada, .hover-tada:hover
+  -webkit-animation-name: tada
+  animation-name: tada
+
+//  #Rubber Band
+///*  ================================================== */
+
+@keyframes rubberBand
+  0%, 100%
+    transform: scale(1)
+  30%
+    transform: scaleX(1.25) scaleY(0.75)
+  40%
+    transform: scaleX(0.75) scaleY(1.25)
+  60%
+    transform: scaleX(1.15) scaleY(0.85)
+
+
+.animating.rubber-band, .hover-rubber-band:hover
+  -webkit-animation-name: rubberBand
+  animation-name: rubberBand
+
+//  #Swing
+///*  ================================================== */
+
+@keyframes swing
+  20%
+    transform: rotate(15deg)
+  40%
+    transform: rotate(-10deg)
+  60%
+    transform: rotate(5deg)
+  80%
+    transform: rotate(-5deg)
+  100%
+    transform: rotate(0deg)
+
+
+.animating.swing, .hover-swing:hover
+  -webkit-animation-name: swing
+  animation-name: swing
+
+//  #Spin Clockwise
+///*  ================================================== */
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+
+.animating.spin, .hover-spin:hover
+  -webkit-animation-name: spin
+  animation-name: spin
+
+//  #Spin Counter-Clockwise
+///*  ================================================== */
+
+@keyframes spin-reverse
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(-360deg)
+
+
+.animating.spin-reverse, .hover-spin-reverse:hover
+  -webkit-animation-name: spin-reverse
+  animation-name: spin-reverse
+
+//  #Slingshot Clockwise
+///*  ================================================== */
+
+@keyframes slingshot
+  0%
+    transform: rotate(0deg)
+  20%, 30%
+    transform: rotate(-45deg)
+  100%
+    transform: rotate(360deg)
+
+
+.animating.slingshot, .hover-slingshot:hover
+  -webkit-animation-name: slingshot
+  animation-name: slingshot
+
+//  #Slingshot Counter-Clockwise
+///*  ================================================== */
+
+@keyframes slingshot-reverse
+  0%
+    transform: rotate(0deg)
+  20%, 30%
+    transform: rotate(45deg)
+  100%
+    transform: rotate(-360deg)
+
+
+.animating.slingshot-reverse, .hover-slingshot-reverse:hover
+  -webkit-animation-name: slingshot-reverse
+  animation-name: slingshot-reverse
+
+//  #Wobble
+///*  ================================================== */
+
+@keyframes wobble
+  0%
+    transform: translateX(0px)
+  15%
+    transform: translateX(-25px) rotate(-5deg)
+  30%
+    transform: translateX(20px) rotate(3deg)
+  45%
+    transform: translateX(-15px) rotate(-3deg)
+  60%
+    transform: translateX(10px) rotate(2deg)
+  75%
+    transform: translateX(-5px) rotate(-1deg)
+  100%
+    transform: translateX(0px)
+
+
+.animating.wobble, .hover-wobble:hover
+  -webkit-animation-name: wobble
+  animation-name: wobble
+
+//  #Pulse
+///*  ================================================== */
+
+@keyframes pulse
+  0%, 100%
+    transform: scale(1)
+  50%
+    transform: scale(1.1)
+
+
+.animating.pulse, .hover-pulse:hover
+  -webkit-animation-name: pulse
+  animation-name: pulse
+
+//  #Pulsate
+///*  ================================================== */
+
+@keyframes pulsate
+  0%, 50%, 100%
+    transform: scale(1)
+  25%, 75%
+    transform: scale(1.1)
+
+
+.animating.pulsate, .hover-pulsate:hover
+  -webkit-animation-name: pulsate
+  animation-name: pulsate
+
+//  #Heartbeat
+///*  ================================================== */
+
+@keyframes heartbeat
+  0%, 30%, 50%, 60%, 80%
+    transform: scale(1)
+  40%, 70%
+    transform: scale(1.1)
+
+
+.animating.heartbeat, .hover-heartbeat:hover
+  -webkit-animation-name: heartbeat
+  animation-name: heartbeat
+
+//  #Panic
+///*  ================================================== */
+
+@keyframes panic
+  0%, 100%
+    transform: scale(1) rotate(0)
+  10%, 60%
+    transform: scale(1.1) rotate(-3deg)
+  20%, 40%
+    transform: scale(1) rotate(-3deg)
+  30%
+    transform: scale(1.1) rotate(3deg)
+  50%, 70%, 90%
+    transform: scale(1) rotate(3deg)
+  80%
+    transform: scale(1.1) rotate(-3deg)
+
+
+.animating.panic, .hover-panic:hover
+  -webkit-animation-name: panic
+  animation-name: panic

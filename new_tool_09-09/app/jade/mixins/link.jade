@@ -1,0 +1,27 @@
+mixin link(title, href)
+  - if (typeof(href) === 'undefined') href = '#'
+  a(href="#{href}", title="#{title}")&attributes(attributes)!=title
+
+
+mixin link-btn(icon, title, href)
+  - if (typeof(href) === 'undefined') href="#"
+  - if (!icon || typeof(icon) === 'undefined'){
+      a(href="#{href}", title="#{title}")&attributes(attributes)!=title
+  - }else{
+      a(href="#{href}", title="#{title}")&attributes(attributes)
+        i(class="icon icon-#{icon}")
+        span!=title
+  - }
+
+mixin link-btn-1(icon, title, href)
+  - if (typeof(href) === 'undefined') href="#"
+  - if (!icon || typeof(icon) === 'undefined'){
+      a(href="#{href}", title="#{title}")&attributes(attributes)!=title
+  - }else{
+      a(href="#{href}", title="#{title}")&attributes(attributes)
+        span!=title
+        i(class="icon icon-#{icon}")
+  - }
+mixin link-tab(title, href)
+  - if (typeof(href) === 'undefined') href = '#'
+  a(href="#{href}", title="#{title}", role="tab" data-toggle="tab")&attributes(attributes)!=title

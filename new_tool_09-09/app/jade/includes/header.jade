@@ -1,0 +1,131 @@
+header#header
+  .container
+    .navigation-top-container
+      .pull-left
+        .block-logo
+          +link-img("images/logo.jpg", "Future Step", homepage)
+      .pull-right.block-search-topmenu
+        .tooltip-content
+          form(action="").form-search
+            .search-tooltip-wrapper
+              .searchBox
+                button.searchButton.btn.btn-default(type='submit', name='search', value='Search')
+                  i.fa.fa-search
+                input.searchTextbox.form-control(name='search', type='text', maxlength='1000', placeholder="Search here ...")
+                .predictiveSearchHolder
+                span.hide.search-keyword-placeholder Keyword
+          .top-menu
+            ul
+              li
+                +link("Parents", "#")
+              li
+                +link("Alumni", "#")
+              li
+                +link("Industry", "#")
+              li
+                +link("Quick Access", "#")
+    .navigation-container
+      .wsmenucontainer.clearfix
+        .wsmenuexpandermain.slideLeft
+          a#navToggle.animated-arrow.slideLeft(href='#')
+            span
+            span
+            span
+        .wsmenucontent.overlapblackbg
+
+        nav.wsmenu.slideLeft.clearfix
+          ul.mobile-sub.wsmenu-list
+            li
+              a(href='#').active
+                | Home
+            li
+              a(href='#')
+                | Academics
+                i.fa.fa-angle-down
+              .megamenu.clearfix
+                .row 
+                  .col-md-3
+                    ul
+                      li.title Undergradute programme
+                      li
+                        a(href='#')
+                          | Lorem ipsum.
+                      li
+                        a(href='#')
+                          |  Lorem ipsum dolor sit amet, consectetur.
+                      li
+                        a(href='#')
+                          |  Lorem ipsum dolor sit.
+                      li
+                        a(href='#')
+                          |  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil.
+                      li
+                        a(href='#')
+                          |  Lorem ipsum.
+
+                  .col-md-3
+
+                    ul
+                      li.title Undergradute programme
+
+                    ul.mt-60
+                      li.title Undergradute programme
+                      li
+                        a(href='#')
+                          |  Lorem ipsum.
+                      li
+                        a(href='#')
+                          | Lorem ipsum dolor sit.
+                      li
+                        a(href='#')
+                          | Lorem ipsum dolor sit amet, consectetur adipisicing.
+
+                  .col-md-3
+                    ul
+                      li.title Undergradute programme
+                      li
+                        a(href='#')
+                          |  Lorem ipsum.
+                      li
+                        a(href='#')
+                          |  Lorem ipsum dolor sit amet, consectetur.
+                  .col-md-3
+                    ul
+                      li.title Undergradute programme
+                      li
+                        a(href='#')
+                          |  Lorem ipsum.
+                      li
+                        a(href='#')
+                          |  Lorem ipsum dolor sit.
+                      li
+                        a(href='#')
+                          |  Lorem ipsum dolor.
+                      li
+                        a(href='#')
+                          |  Lorem ipsum dolor sit.
+                      li
+                        a(href='#')
+                          |  Lorem ipsum dolor sit amet, consectetur adipisicing.
+            li
+              a(href='#')
+                | Campus news
+                i.fa.fa-angle-down
+            li
+              a(href='#')
+                | About
+                i.fa.fa-angle-down
+            li
+              a(href='#')
+                | Calendar
+                i.fa.fa-angle-down
+            li
+              a(href='#')
+                | The sit blog
+                i.fa.fa-angle-down
+            li
+              a(href='#')
+                | Contact
+            li.microsite
+              a(href='#')
+                | Admissions 

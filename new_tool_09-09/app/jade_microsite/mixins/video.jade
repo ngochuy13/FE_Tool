@@ -1,0 +1,7 @@
+mixin video(src, dataUrl)
+  #video
+    a(title="", href="javascript:void(0)", data-url="#{dataUrl}")&attributes(attributes)
+      img(alt="", src="#{src}")
+      button.icon-play Play video
+      .overlay
+    #player

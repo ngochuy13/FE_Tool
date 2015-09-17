@@ -1,0 +1,46 @@
+.img-responsive
+	display: block
+	max-width: 100%
+	margin: 0 auto
+
+.img-circle
+	+border-radius(50%)
+	display: block
+
+.figure
+	border: 1px solid #d2dce5
+	padding: 6px
+	margin: 0 auto
+	max-width: 342px
+	@include box-sizing(border-box)
+	img
+		display: block
+		max-width: 100%
+		width: 100%
+
+// Triangle
+$triangle-bd: #E5EDF4
+.triangle-top-left,
+.triangle-bottom-right
+	display: block
+	position: absolute
+	@include square(0)
+
+.triangle-top-left
+	top: 2px
+	left: 2px
+	border-top: 18px solid $triangle-bd
+	border-right: 18px solid transparent
+	&.style-1
+		border-top: 13px solid $triangle-bd
+		border-right: 13px solid transparent
+
+.triangle-bottom-right
+	top: auto
+	bottom: 2px
+	right: 2px
+	border-bottom: 18px solid $triangle-bd
+	border-left: 18px solid transparent
+	&.style-1
+		border-bottom: 13px solid $triangle-bd
+		border-left: 13px solid transparent

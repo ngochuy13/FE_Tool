@@ -1,0 +1,11 @@
+mixin figure(alt, src)
+  - if (typeof(src) === 'undefined') src = 'images/transparent.png'
+  figure&attributes(attributes)
+    img(alt="#{alt}", src="#{src}")
+
+mixin thumbnail(alt, src, href)
+  - if (typeof(src) === 'undefined') src = 'images/transparent.png'
+  - if (typeof(href) === 'undefined') href = '#'
+  .thumbnail&attributes(attributes)
+    a(href="#{href}", title="")
+      img(alt="#{alt}", src="#{src}")

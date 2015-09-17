@@ -1,0 +1,80 @@
+include ../mixins/all
+block vars
+  -title = 'Site'
+  -bodyClass = ''
+- var homepage                = "home.html";
+doctype html
+//[if IE 8]><html lang="en" class="no-js ie ie8"><![endif]
+//[if IE 9]><html lang="en" class="no-js ie ie9"><![endif]
+//[if gt IE 9]><!
+html(class="no-js", lang="en")
+  //<![endif]
+  head
+    meta(charset="utf-8")
+    //[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]
+    title=title
+    meta(name="description", content="")
+    meta(name="keywords", content="")
+    meta(name="robots", content="index, follow")
+    meta(name="author", content="")
+
+    meta(name='viewport', content='initial-scale=1.0,user-scalable=no,maximum-scale=1')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='HandheldFriendly', content='True')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black')
+
+    //- link(rel="shortcut icon", href="images/favicon.ico", type="image/x-icon")
+    link(rel="stylesheet", href="styles/main.css")
+    //- link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", rel="stylesheet")
+
+    //- script include within the block build:js -- endbuild will be combined into one file and the url as stated after build:js
+    // build:js scripts/modernizr.js
+    script(src='/bower_components/modernizr/modernizr.js')
+    // endbuild
+  body(class=bodyClass)
+    #container
+      .page-wrapper
+        include ../includes/header
+        block container
+      include ../includes/footer
+
+    //- cdn links
+    //- jQuery https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js
+
+    // build:js scripts/cdn.js
+    script(src='/bower_components/jquery/dist/jquery.js')
+    // endbuild
+
+    // build:js scripts/dep.js
+    script(src='/bower_components/webslidemenu/js/webslidemenu.js')
+    //- script(src='/bower_components/pubsub/odfc-pubsub.js')
+    //- script(src='/bower_components/radioUI/odfc-radio.js')
+    //- script(src='/bower_components/nicescroll/jquery.nicescroll.min.js')
+    //- script(src='/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js')
+    //- script(src='/bower_components/bootstrap-select/dist/js/bootstrap-select.min.js')
+    //- script(src='/bower_components/selectUI/odfc-select.js')
+    //- script(src='/bower_components/jquery-accordion/js/jquery.accordion.js')
+    //- script(src='/bower_components/slick.js/slick/slick.min.js')
+    //- script(src='/bower_components/jquery-placeholder/jquery.placeholder.min.js')
+    //- script(src='/bower_components/jquery-sticky/jquery.sticky.js')
+    //- script(src='/bower_components/tooltipster/js/jquery.tooltipster.min.js')
+    //- script(src='/bower_components/owl-carousel2/dist/owl.carousel.js')
+    //- script(src='/bower_components/superslides/dist/jquery.superslides.js')
+    //- script(src='/bower_components/matchHeight/jquery.matchHeight.js')
+    //- script(src='/bower_components/gray/js/jquery.gray.min.js')
+    // endbuild
+  
+    // build:js scripts/components.js
+    //- script(src='/scripts/navigation.js')
+    // endbuild
+
+    block pagescript
+
+    // build:js scripts/main.js
+    script(src='/scripts/main.js')
+    // endbuild
+    script.
+      //- Your master script stays here
+      //- This block will be override on each page.
+    //[if lt IE 8]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]
+    noscript JavaScript is off. Please enable to view full site.

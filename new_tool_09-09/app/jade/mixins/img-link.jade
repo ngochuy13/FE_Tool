@@ -1,0 +1,7 @@
+mixin link-img(src, title, href)
+  -if(typeof(title) === 'undefined') title = ""
+  - if (typeof(href) === 'undefined') href = '#'
+  a(href="#{href}", title="#{title}")&attributes(attributes)
+    img(src="#{src}", alt="#{title}")
+    if block
+      block

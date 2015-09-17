@@ -1,0 +1,25 @@
+extends layouts/layout
+
+block vars
+  -title = 'Site maps'
+  -bodyClass = ''
+block container
+  main#main(style="min-height: 800px")
+    .container
+      .inner
+        h1 Site Maps
+        ol(start="1")
+          li: +link("Homepage", homepage)(target="_blank", value="1")
+          li
+            +link("About Landing", aboutLanding)(target="_blank")
+            ul
+              li: +link("Service Group", aboutServiceGroup)(target="_blank")
+              li: +link("Global Network", aboutGlobalNetwork)(target="_blank")
+              li: +link("Key Management", aboutKeyManagement)(target="_blank")
+              li: +link("Chairman's Message", aboutChairmanMessage)(target="_blank")
+              li: +link("Regional Presence", aboutRegionalPresence)(target="_blank")
+              li: +link("Core values", aboutCoreValue)(target="_blank")
+          li: +link("Our Businesses", ourBusinesses)(target="_blank")
+          li: +link("Corporate Social Responsibilities", csr)(target="_blank")
+          li: +link("News Subscribe / UnSubscribe Moments", newsSubscribe)(target="_blank") 
+

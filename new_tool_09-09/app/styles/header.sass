@@ -1,0 +1,111 @@
+.navigation-top-container, .navigation-container
+  float: left
+  width: 100%  
+.navigation-container
+  margin-top: 20px
+.block-logo
+  padding-top: 20px
+.block-search-topmenu
+  padding-top: 42px
+  .form-search
+    float: right
+    position: relative
+    bottom: 7px
+    .searchTextbox
+      display: inline-block
+      width: 90px
+      border: none
+      box-shadow: none
+    .searchButton
+      border: none
+      position: relative
+      bottom: 4px
+      padding: 0
+      &:hover
+        background: none
+  .top-menu
+    float: right
+    margin-right: 0
+    ul 
+      padding: 0
+      margin: 0
+      list-style-type: none
+      li
+        display: inline-block
+        padding: 0 18px 0 13px
+        background: url('../images/bg-li-top-menu.jpg') center right no-repeat
+        &:last-child
+          background: none
+        a 
+          font-weight: 100
+          font-size: 15px
+          text-transform: uppercase
+          color: #666666
+          letter-spacing: -1px
+          &:hover
+            text-decoration: none
+
+.wsmenu, .wsmenu-list li:first-child a, .wsmenu-list li:last-child a
+  border-radius: 0
+.wsmenu-list 
+  > li
+    // padding-bottom: 20px
+    > a
+      background: none
+      border: 0
+      text-transform: uppercase
+      font-weight: bold
+      font-size: 14px
+      position: relative
+      i
+        position: absolute
+        right: 0
+        top: 0
+      &.active, &:hover
+        background: #454545 
+        color: #fff 
+        i 
+          display: none
+          
+    &:hover 
+      background: #454545
+      > a 
+        background: #454545
+        color: #fff
+        i 
+          display: none
+    &.microsite
+      a 
+        border: 4px solid #fb0c1b
+        color: #fb0c1b
+        line-height: 40px
+      &:hover > a 
+        border-color: transparent
+        
+  .megamenu
+    // top: 68px
+    border: none
+    background: #454545
+    color: #fff
+    padding: 35px 60px
+    li a 
+      color: #fff
+      font-size: 12px
+      line-height: 1
+      &:hover
+        text-decoration: none 
+    ul
+      margin-bottom: 20px  
+      &.mt-60
+        margin-top: 60px
+    li 
+      margin-bottom: 7px
+    .title
+      font-size: 20px
+      line-height: 19px
+      color: #fff
+      border: none
+      text-transform: uppercase
+      margin-bottom: 20px
+      padding: 0
+      height: auto
